@@ -1,9 +1,10 @@
 import React from 'react';
-import './../App.css';
+import s from './Profile.module.css';
+import MyPosts from './MyPosts/MyPosts';
 
 const Profile = () => {
   return (
-    <div className="content">
+    <div className={s.content}>
       <div>
         <img
           alt="big_logo"
@@ -12,12 +13,7 @@ const Profile = () => {
       </div>
       <div>ava + description</div>
       <div>
-        My posrs
-        <div>New post</div>
-        <div>
-          <div>Post 1</div>
-          <div>Post 2</div>
-        </div>
+        <MyPosts />
       </div>
     </div>
   );
