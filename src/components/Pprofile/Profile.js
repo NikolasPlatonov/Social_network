@@ -8,7 +8,7 @@ const Profile = () => {
       <div>
         <img
           alt="big_logo"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxx7aRo7H8w68TK5atLxyzQ7_eCLv6DdYCIHP96DxLrjOPOYtVAw&s"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH5y3Hh2zYe-5EsxLq0yGIL9UCH5Wfhrz4tLtNgqctoD9veaoZXw&s"
         />
       </div>
       <div>ava + description</div>
