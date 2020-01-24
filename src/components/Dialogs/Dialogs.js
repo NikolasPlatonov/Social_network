@@ -2,36 +2,37 @@ import React from 'react';
 import s from './Dialogs.module.css';
 import { NavLink } from 'react-router-dom';
 
+const DialogItem = props => {
+  let path = '/dialogs/' + props.id;
+  return (
+    <div className={s.dialog}>
+      <NavLink to={path}>{props.name}</NavLink>
+    </div>
+  );
+};
+
+const MessageItem = props => {
+  return <div className={s.message}>{props.message}</div>;
+};
+
 const Dialogs = () => {
   return (
     <div className={s.dialogs}>
       <div className={s.dialogItems}>
-        <div className={s.dialog}>
-          <NavLink to="/dialogs/bob">Bob</NavLink>
-        </div>
-        <div className={s.dialog + ' ' + s.active}>
-          <NavLink to="/dialogs/nick">Nick</NavLink>
-        </div>
-        <div className={s.dialog}>
-          <NavLink to="/dialogs/sher">Sher</NavLink>
-        </div>
-        <div className={s.dialog}>
-          <NavLink to="/dialogs/edik">Edik</NavLink>
-        </div>
-        <div className={s.dialog}>
-          <NavLink to="/dialogs/robby">Robby</NavLink>
-        </div>
-        <div className={s.dialog}>
-          <NavLink to="/dialogs/jack">Jack</NavLink>
-        </div>
+        <DialogItem name="Bob" id="bob" />
+        <DialogItem name="Nick" id="nick" />
+        <DialogItem name="Sher" id="sher" />
+        <DialogItem name="Edik" id="edik" />
+        <DialogItem name="Robby" id="robby" />
+        <DialogItem name="Jack" id="jack" />
       </div>
       <div className={s.messageItems}>
-        <div className={s.message}>awrarawerfwffareaefafaferfa</div>
-        <div className={s.message}>25432452545afafewa</div>
-        <div className={s.message}>asfdasfae353534</div>
-        <div className={s.message}>affafafafaref</div>
-        <div className={s.message}>54235425wefgwesfwerg25624523</div>
-        <div className={s.message}>51feevfdsvsdfvs</div>
+        <MessageItem message="Bla-bla-bla-bla, Bob!" />
+        <MessageItem message="Bla-bla-bla-bla, Nick!" />
+        <MessageItem message="Bla-bla-bla-bla, Sher!" />
+        <MessageItem message="Bla-bla-bla-bla, Edik!" />
+        <MessageItem message="Bla-bla-bla-bla, Robby!" />
+        <MessageItem message="Bla-bla-bla-bla, Jack!" />
       </div>
     </div>
   );
