@@ -1,12 +1,15 @@
 .nav {
   grid-area: n;
-  background-color: burlywood;
+  background-color: goldenrod;
+  padding: 20px;
 }
 
-.item {
+/* because "a" it's tag <a></a> for link */
+.item a {
   color: white;
+  text-decoration: none;
 }
 
-.item.active {
+.item a.active {
   color: red;
 }
