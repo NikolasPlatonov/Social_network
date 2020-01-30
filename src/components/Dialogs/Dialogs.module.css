@@ -14,3 +14,8 @@
 .messageItems {
   padding: 10px;
 }
+
+.item img {
+  width: 50px;
+  border-radius: 25px;
+}
