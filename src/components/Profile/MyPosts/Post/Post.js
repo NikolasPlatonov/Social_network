@@ -2,7 +2,6 @@ import React from 'react';
 import s from './Post.module.css';
 
 const Post = props => {
-  console.log('POST: props', props);
   return (
     <div className={s.item}>
       <img alt="avatar" src={props.avatar} />
