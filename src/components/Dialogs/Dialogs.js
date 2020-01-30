@@ -2,17 +2,15 @@ import React from 'react';
 import s from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem';
 import MessageItem from './MessageItem/MessageItem';
-import Settings from '../Settings/Settings';
 
 const Dialogs = props => {
-  console.log('TCL: props', props);
+  console.log('DIALOGS: props', props);
   let dialogsElements = props.dialogs.map(d => (
-    <div className={s.item}>
-      <img
-        alt="avatar"
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTy8Dzr5ful4rdu5spG9XbBsoTgEAZ7ECy-tfCZmPtGR2Fw4BrF&s"
-      />
-      <DialogItem name={d.name} id={d.id} key={d.id} avatar={d.avatar} />
+    <div className={s.ava_item}>
+      <div>
+        <img alt="avatar" src={d.avatar} />
+        <DialogItem name={d.name} id={d.id} key={d.id} />
+      </div>
     </div>
   ));
 

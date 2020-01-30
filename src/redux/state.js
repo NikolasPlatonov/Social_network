@@ -5,13 +5,38 @@ let state = {
         id: 1,
         name: 'Bob',
         avatar:
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTy8Dzr5ful4rdu5spG9XbBsoTgEAZ7ECy-tfCZmPtGR2Fw4BrF&s',
+          'http://icons.iconarchive.com/icons/icons-land/vista-people/128/Office-Customer-Male-Light-icon.png',
       },
-      { id: 2, name: 'Nick' },
-      { id: 3, name: 'Sher' },
-      { id: 4, name: 'Edik' },
-      { id: 5, name: 'Robby' },
-      { id: 6, name: 'Jack' },
+      {
+        id: 2,
+        name: 'Nick',
+        avatar:
+          'http://icons.iconarchive.com/icons/aha-soft/free-large-boss/128/Admin-icon.png',
+      },
+      {
+        id: 3,
+        name: 'Sher',
+        avatar:
+          'http://icons.iconarchive.com/icons/dapino/teenage-girl/128/girl-swear-icon.png',
+      },
+      {
+        id: 4,
+        name: 'Edik',
+        avatar:
+          'http://icons.iconarchive.com/icons/icons-land/medical/128/People-Doctor-Male-icon.png',
+      },
+      {
+        id: 5,
+        name: 'Robby',
+        avatar:
+          'http://icons.iconarchive.com/icons/icons-land/vista-people/128/Office-Customer-Female-Light-icon.png',
+      },
+      {
+        id: 6,
+        name: 'Jack',
+        avatar:
+          'http://icons.iconarchive.com/icons/martin-berube/character/128/Man-icon.png',
+      },
     ],
     messages: [
       { id: 1, message: 'Hi, how are you?' },

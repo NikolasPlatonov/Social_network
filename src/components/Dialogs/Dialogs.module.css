@@ -12,10 +12,22 @@
 }
 
 .messageItems {
-  padding: 10px;
+  text-align: left;
 }
 
-.item img {
+.message {
+  padding-top: 40px;
+  padding-bottom: 30px;
+  text-align: left;
+}
+
+.ava_item {
+  text-align: center;
+  padding-bottom: 10px;
+  text-decoration: none;
+}
+
+.ava_item img {
   width: 50px;
   border-radius: 25px;
 }
