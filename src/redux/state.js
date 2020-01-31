@@ -84,6 +84,28 @@ let state = {
       },
     ],
   },
+  sitebar: {
+    friends: [
+      {
+        id: 1,
+        name: 'Bill',
+        avatar:
+          'https://depositphotos.com/113863326/stock-illustration-avatar-man-icon-people-design.html',
+      },
+      {
+        id: 2,
+        name: 'Ted',
+        avatar:
+          'https://depositphotos.com/113864450/stock-illustration-avatar-man-icon-people-design.html',
+      },
+      {
+        id: 3,
+        name: 'Ken',
+        avatar:
+          'https://depositphotos.com/113864450/stock-illustration-avatar-man-icon-people-design.html',
+      },
+    ],
+  },
 };
 
 export default state;
