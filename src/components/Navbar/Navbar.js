@@ -3,7 +3,7 @@ import s from './Navbar.module.css';
 import { NavLink } from 'react-router-dom';
 import Sitebar from '../Sitebar/Sitebar';
 
-const Navbar = () => {
+const Navbar = props => {
   return (
     <nav className={s.nav}>
       <div className={s.item}>
@@ -34,7 +34,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className={s.sitebar}>
-        <Sitebar />
+        <Sitebar friends={props.sitebar.friends} />
       </div>
     </nav>
   );
