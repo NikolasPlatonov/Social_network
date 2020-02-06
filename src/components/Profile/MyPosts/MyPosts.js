@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './MyPosts.module.css';
 import Post from './Post/Post';
+import InputElement from '../../InputElement/InputElement';
 
 const MyPosts = props => {
   let postsElements = props.posts.map(p => (
@@ -10,14 +11,8 @@ const MyPosts = props => {
   return (
     <div className={s.posts}>
       <h2>My posts</h2>
-
       <div>
-        <div>
-          <textarea></textarea>
-        </div>
-        <div className={s.postsAddBtn}>
-          <button>Add post</button>
-        </div>
+        <InputElement />
       </div>
       <div className={s.posts}> {postsElements} </div>
     </div>

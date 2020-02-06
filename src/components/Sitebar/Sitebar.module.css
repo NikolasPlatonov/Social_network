@@ -1,16 +1,18 @@
 .main {
-  grid-template-rows: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .group {
   color: white;
-}
-
-.group img {
-  width: 100px;
-  border-radius: 25px;
+  padding-bottom: 10px;
 }
 
 .item {
-  padding-right: 25px;
+  padding-left: 10px;
+}
+
+.item img {
+  width: 50px;
+  border-radius: 20px;
 }
