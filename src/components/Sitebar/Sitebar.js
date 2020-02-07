@@ -2,7 +2,6 @@ import React from 'react';
 import s from './Sitebar.module.css';
 
 const Sitebar = props => {
-  console.log('SITEBAR: props', props.friends);
   return (
     <div>
       <div className={s.group}>Sitebar</div>

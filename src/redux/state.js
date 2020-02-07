@@ -1,3 +1,5 @@
+import { rerenderEntireTree } from '../render';
+
 let state = {
   dialogsPage: {
     dialogs: [
@@ -45,7 +47,7 @@ let state = {
       { id: 4, message: 'How is your training going?' },
       {
         id: 5,
-        message: 'Come to my page in FB. There are many interesting ;-)',
+        message: 'Come to my page in FB ;-)',
       },
       { id: 6, message: 'Сool page, Bro! ))' },
     ],
@@ -83,6 +85,7 @@ let state = {
         likesCount: 7,
       },
     ],
+    newPostText: 'qwerty',
   },
   sitebar: {
     friends: [
@@ -106,6 +109,21 @@ let state = {
       },
     ],
   },
+};
+
+export let addPost = postMessage => {
+  let newPost = {
+    id: 10,
+    message: postMessage,
+    likesCount: 0,
+  };
+  state.profilePage.posts.push(newPost);
+  rerenderEntireTree(state);
+};
+
+export let updateNewPostText = newText => {
+  state.profilePage.newPostText = newText;
+  rerenderEntireTree(state);
 };
 
 export default state;

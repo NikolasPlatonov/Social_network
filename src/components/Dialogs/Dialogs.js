@@ -2,10 +2,8 @@ import React from 'react';
 import s from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem';
 import MessageItem from './MessageItem/MessageItem';
-import InputElement from '../InputElement/InputElement';
 
 const Dialogs = props => {
-  console.log('DIALOGS: props', props);
   let dialogsElements = props.dialogs.map(d => (
     <div className={s.ava_item}>
       <div>
@@ -24,7 +22,14 @@ const Dialogs = props => {
       <div className={s.dialogItems}>{dialogsElements}</div>
       <div className={s.messageItems}>{messagesElements}</div>
       <div>
-        <InputElement />
+        <div>
+          <div>
+            <textarea></textarea>
+          </div>
+          <div>
+            <button>Sent</button>
+          </div>
+        </div>
       </div>
     </div>
   );

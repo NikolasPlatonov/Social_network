@@ -10,9 +10,15 @@ const MyPosts = props => {
 
   return (
     <div className={s.posts}>
-      <h2>My posts</h2>
+      <div className={s.title}>
+        <h2>My posts</h2>
+      </div>
       <div>
-        <InputElement />
+        <InputElement
+          addPost={props.addPost}
+          newPostText={props.newPostText}
+          updateNewPostText={props.updateNewPostText}
+        />
       </div>
       <div className={s.posts}> {postsElements} </div>
     </div>
