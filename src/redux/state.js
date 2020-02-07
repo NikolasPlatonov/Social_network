@@ -1,4 +1,6 @@
-import { rerenderEntireTree } from '../render';
+let rerenderEntireTree = () => {
+  console.log('State changed!!!');
+};
 
 let state = {
   dialogsPage: {
@@ -85,7 +87,7 @@ let state = {
         likesCount: 7,
       },
     ],
-    newPostText: 'qwerty',
+    newPostText: '',
   },
   sitebar: {
     friends: [
@@ -111,19 +113,27 @@ let state = {
   },
 };
 
-export let addPost = postMessage => {
+window.state = state;
+
+export const addPost = () => {
   let newPost = {
     id: 10,
-    message: postMessage,
+    message: state.profilePage.newPostText,
     likesCount: 0,
   };
   state.profilePage.posts.push(newPost);
+  state.profilePage.newPostText = '';
   rerenderEntireTree(state);
 };
 
-export let updateNewPostText = newText => {
+export const updateNewPostText = newText => {
+  console.log('TCL: newText', newText);
   state.profilePage.newPostText = newText;
   rerenderEntireTree(state);
+};
+
+export const subscribe = observer => {
+  rerenderEntireTree = observer;
 };
 
 export default state;
