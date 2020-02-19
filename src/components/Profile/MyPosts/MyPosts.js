@@ -15,9 +15,8 @@ const MyPosts = props => {
       </div>
       <div>
         <InputElement
-          addPost={props.addPost}
+          dispatch={props.dispatch}
           newPostText={props.newPostText}
-          updateNewPostText={props.updateNewPostText}
         />
       </div>
       <div className={s.posts}> {postsElements} </div>
