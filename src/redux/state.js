@@ -68,21 +68,6 @@ let store = {
           message: 'Duuuuud! Whats up? )))))))',
           likesCount: 13,
         },
-        {
-          id: 4,
-          message: 'Cool post, man!',
-          likesCount: 20,
-        },
-        {
-          id: 5,
-          message: 'Come to my page in FB, pls! ',
-          likesCount: 17,
-        },
-        {
-          id: 6,
-          message: 'There are many interesting ;-)',
-          likesCount: 7,
-        },
       ],
       newPostText: '',
     },

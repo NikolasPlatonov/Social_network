@@ -1,23 +1,43 @@
 import React from 'react';
 import s from './MyPosts.module.css';
 import Post from './Post/Post';
-import InputElement from '../../InputElement/InputElement';
+
+let addPostActionCreator = () => ({ type: 'ADD-POST' });
+let updateNewPostTextActionCriation = text => ({
+  type: 'UPDATE-NEW-POST-TEXT',
+  newText: text,
+});
 
 const MyPosts = props => {
   let postsElements = props.posts.map(p => (
     <Post id={p.id} message={p.message} likesCount={p.likesCount} key={p.id} />
   ));
 
+  let newPostElement = React.createRef();
+
+  let addPost = () => {
+    props.dispatch(addPostActionCreator());
+  };
+
+  let onPostChange = () => {
+    let text = newPostElement.current.value;
+    props.dispatch(updateNewPostTextActionCriation(text));
+  };
+
   return (
     <div className={s.posts}>
       <div className={s.title}>
         <h2>My posts</h2>
       </div>
-      <div>
-        <InputElement
-          dispatch={props.dispatch}
-          newPostText={props.newPostText}
+      <div className={s.inputArea}>
+        <textarea
+          onChange={onPostChange}
+          ref={newPostElement}
+          value={props.newPostText}
         />
+        <div>
+          <button onClick={addPost}>ADD POST</button>
+        </div>
       </div>
       <div className={s.posts}> {postsElements} </div>
     </div>
