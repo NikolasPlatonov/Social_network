@@ -1,5 +1,7 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const ADD_MESSAGE = 'ADD-MESSAGE';
+const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 
 let store = {
   _state: {
@@ -29,30 +31,14 @@ let store = {
           avatar:
             'http://icons.iconarchive.com/icons/icons-land/medical/128/People-Doctor-Male-icon.png',
         },
-        {
-          id: 5,
-          name: 'Robby',
-          avatar:
-            'http://icons.iconarchive.com/icons/icons-land/vista-people/128/Office-Customer-Female-Light-icon.png',
-        },
-        {
-          id: 6,
-          name: 'Jack',
-          avatar:
-            'http://icons.iconarchive.com/icons/martin-berube/character/128/Man-icon.png',
-        },
       ],
       messages: [
         { id: 1, message: 'Hi, how are you?' },
         { id: 2, message: 'Did you hear new treks JZ?' },
         { id: 3, message: 'Duuuuud! Whats up? )))))))' },
         { id: 4, message: 'How is your training going?' },
-        {
-          id: 5,
-          message: 'Come to my page in FB ;-)',
-        },
-        { id: 6, message: 'Сool page, Bro! ))' },
       ],
+      newMessageText: '',
     },
     profilePage: {
       posts: [
@@ -123,6 +109,17 @@ let store = {
     } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
       this._state.profilePage.newPostText = action.newText;
       this._callSubscriber(this._state);
+    } else if (action.type === 'UPDATE-NEW-MESSAGE-TEXT') {
+      this._state.dialogsPage.newMessageText = action.newText;
+      this._callSubscriber(this._state);
+    } else if (action.type === 'ADD-MESSAGE') {
+      let newMessage = {
+        id: 111,
+        message: this._state.dialogsPage.newMessageText,
+      };
+      this._state.dialogsPage.messages.push(newMessage);
+      this._state.dialogsPage.newMessageText = '';
+      this._callSubscriber(this._state);
     }
   },
 };
@@ -131,6 +128,13 @@ export const addPostActionCreator = () => ({ type: ADD_POST });
 
 export const updateNewPostTextActionCriation = text => ({
   type: UPDATE_NEW_POST_TEXT,
+  newText: text,
+});
+
+export const addMessageActionCreator = () => ({ type: ADD_MESSAGE });
+
+export const updateNewMessageTextActionCriation = text => ({
+  type: UPDATE_NEW_MESSAGE_TEXT,
   newText: text,
 });
 

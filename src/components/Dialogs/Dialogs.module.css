@@ -4,7 +4,8 @@
 }
 
 .dialogItems {
-  padding: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
 }
 
 .dialogItems .active {
@@ -30,4 +31,9 @@
 .ava_item img {
   width: 50px;
   border-radius: 25px;
+}
+
+.inputArea {
+  padding-left: 20px;
+  padding-bottom: 20px;
 }
