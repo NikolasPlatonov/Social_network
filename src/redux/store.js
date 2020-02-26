@@ -1,5 +1,6 @@
 import profileReducer from './profile-reducer';
 import dialogsReducer from './dialogs-reducer';
+import sitebarReducer from './sitebar-reducer';
 
 let store = {
   _state: {
@@ -79,6 +80,7 @@ let store = {
             'https://cdn.iconscout.com/icon/free/png-256/avatar-367-456319.png',
         },
       ],
+      newFriend: '',
     },
   },
 
@@ -95,8 +97,9 @@ let store = {
   },
 
   dispatch(action) {
-    this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
     this._state.profilePage = profileReducer(this._state.profilePage, action);
+    this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+    this._state.sitebar = sitebarReducer(this._state.sitebar, action);
 
     this._callSubscriber(this._state);
   },
