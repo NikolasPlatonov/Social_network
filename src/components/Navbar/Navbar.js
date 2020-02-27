@@ -2,7 +2,7 @@ import React from 'react';
 import s from './Navbar.module.css';
 import { NavLink } from 'react-router-dom';
 import Sitebar from '../Sitebar/Sitebar';
-import StoreContext from '../../StoreContext';
+import StoreContext from '../../@StoreContext_example';
 
 const Navbar = () => {
   return (
@@ -35,7 +35,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <StoreContext.Consumer>
+      {/* <StoreContext.Consumer>
         {store => {
           let friends = store.getState().sitebar.friends;
 
@@ -45,7 +45,7 @@ const Navbar = () => {
             </div>
           );
         }}
-      </StoreContext.Consumer>
+      </StoreContext.Consumer> */}
     </nav>
   );
 };
