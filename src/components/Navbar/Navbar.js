@@ -2,8 +2,9 @@ import React from 'react';
 import s from './Navbar.module.css';
 import { NavLink } from 'react-router-dom';
 import Sitebar from '../Sitebar/Sitebar';
+import StoreContext from '../../StoreContext';
 
-const Navbar = props => {
+const Navbar = () => {
   return (
     <nav className={s.nav}>
       <div className={s.item}>
@@ -33,9 +34,18 @@ const Navbar = props => {
           </NavLink>
         </div>
       </div>
-      <div className={s.sitebar}>
-        <Sitebar friends={props.sitebar.friends} />
-      </div>
+
+      <StoreContext.Consumer>
+        {store => {
+          let friends = store.getState().sitebar.friends;
+
+          return (
+            <div className={s.sitebar}>
+              <Sitebar friends={friends} />
+            </div>
+          );
+        }}
+      </StoreContext.Consumer>
     </nav>
   );
 };

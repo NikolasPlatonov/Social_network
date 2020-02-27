@@ -3,7 +3,6 @@ import './App.css';
 import { Route, BrowserRouter } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
-import Dialogs from './components/Dialogs/Dialogs';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
@@ -15,18 +14,10 @@ const App = props => {
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
-        <Navbar sitebar={props.state.sitebar} />
+        <Navbar />
         <div className="app-wrapper-content">
-          <Route
-            exact
-            path="/profile"
-            render={() => <Profile store={props.store} />}
-          />
-          <Route
-            exact
-            path="/dialogs"
-            render={() => <DialogsContainer store={props.store} />}
-          />
+          <Route exact path="/profile" render={() => <Profile />} />
+          <Route exact path="/dialogs" render={() => <DialogsContainer />} />
           <Route exact path="/news" component={News} />
           <Route exact path="/music" component={Music} />
           <Route exact path="/settings" component={Settings} />
