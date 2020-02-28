@@ -1,3 +1,5 @@
+const ADD_FRIENDS = 'ADD-FRIENDS';
+
 let initialState = {
   friends: [
     {
@@ -23,7 +25,18 @@ let initialState = {
 };
 
 const sitebarReducer = (state = initialState, action) => {
-  return state;
+  switch (action.type) {
+    case ADD_FRIENDS:
+      return {
+        ...state,
+        newFriend: '',
+      };
+
+    default:
+      return state;
+  }
 };
+
+export const addFriendsActionCreator = () => ({ type: ADD_FRIENDS });
 
 export default sitebarReducer;

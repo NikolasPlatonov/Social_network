@@ -6,7 +6,7 @@ const Sitebar = props => {
     <div>
       <div className={s.group}>Sitebar</div>
       <div className={s.main}>
-        {props.friends.map(f => (
+        {props.sitebar.map(f => (
           <div className={s.item} key={f.id}>
             <img alt="avatar" src={f.avatar} />
             <div className={s.item}>{f.name}</div>
