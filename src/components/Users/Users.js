@@ -1,7 +1,9 @@
 import React from 'react';
+import s from './Users.modules.css';
 
 const Users = props => {
-  return <div>USERS</div>;
+  console.log('props', props);
+  return <div>Place for users list!</div>;
 };
 
 export default Users;

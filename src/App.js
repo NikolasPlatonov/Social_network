@@ -8,9 +8,9 @@ import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import Profile from './components/Profile/Profile';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
-import Users from './components/Users/Users';
+import UsersContainer from './components/Users/UsersContainer';
 
-const App = props => {
+const App = () => {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -21,7 +21,7 @@ const App = props => {
           <Route exact path="/dialogs" render={() => <DialogsContainer />} />
           <Route exact path="/news" component={News} />
           <Route exact path="/music" component={Music} />
-          <Route exact path="/users" render={() => <Users />} />
+          <Route exact path="/users" render={() => <UsersContainer />} />
           <Route exact path="/settings" component={Settings} />
         </div>
       </div>
