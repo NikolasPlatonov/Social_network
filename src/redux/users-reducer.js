@@ -31,6 +31,15 @@ let initialState = {
       status: 'How are you?',
       location: { country: 'Germany', city: 'Berlin' },
     },
+    {
+      id: 4,
+      photoUrl:
+        'http://icons.iconarchive.com/icons/aha-soft/free-large-boss/128/Admin-icon.png',
+      followed: false,
+      firstName: 'Boby',
+      status: 'Qwertyuiop?',
+      location: { country: 'Dfgyrgh', city: 'Fwerthejf' },
+    },
   ],
 };
 
