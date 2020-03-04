@@ -3,14 +3,14 @@ import Users from './Users';
 import { connect } from 'react-redux';
 import * as axios from 'axios';
 import {
-  followActionCreator,
-  unFollowActionCreator,
-  setUsersActionCreator,
-  setCurrentPageActionCreator,
-  setTotalUsersCountActionCreator,
-  toogleIsFetchingActionCreator,
+  follow,
+  unFollow,
+  setUsers,
+  setCurrentPage,
+  setTotalUsersCount,
+  toogleIsFetching,
 } from '../../redux/users-reducer';
-import preloader from './../../assets/images/preloader.gif';
+import Preloader from '../../common/preloader/Preloader';
 
 class UsersContainer extends React.Component {
   componentDidMount() {
@@ -42,11 +42,7 @@ class UsersContainer extends React.Component {
   render() {
     return (
       <>
-        {this.props.isFetching ? (
-          <div style={{ backgroundColor: 'white' }}>
-            <img alt="preloader" src={preloader} />
-          </div>
-        ) : null}
+        {this.props.isFetching ? <Preloader /> : null}
         <Users
           totalUsersCount={this.props.totalUsersCount}
           pageSize={this.props.pageSize}
@@ -71,27 +67,11 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    follow: userId => {
-      dispatch(followActionCreator(userId));
-    },
-    unfollow: userId => {
-      dispatch(unFollowActionCreator(userId));
-    },
-    setUsers: users => {
-      dispatch(setUsersActionCreator(users));
-    },
-    setCurrentPage: pageNumber => {
-      dispatch(setCurrentPageActionCreator(pageNumber));
-    },
-    setTotalUsersCount: totalCaunt => {
-      dispatch(setTotalUsersCountActionCreator(totalCaunt));
-    },
-    toogleIsFetching: isFetching => {
-      dispatch(toogleIsFetchingActionCreator(isFetching));
-    },
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer);
+export default connect(mapStateToProps, {
+  follow: follow,
+  unfollow: unFollow,
+  setUsers: setUsers,
+  setCurrentPage: setCurrentPage,
+  setTotalUsersCount: setTotalUsersCount,
+  toogleIsFetching: toogleIsFetching,
+})(UsersContainer);
