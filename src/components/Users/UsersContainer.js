@@ -68,10 +68,10 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps, {
-  follow: follow,
-  unfollow: unFollow,
-  setUsers: setUsers,
-  setCurrentPage: setCurrentPage,
-  setTotalUsersCount: setTotalUsersCount,
-  toogleIsFetching: toogleIsFetching,
+  follow,
+  unFollow,
+  setUsers,
+  setCurrentPage,
+  setTotalUsersCount,
+  toogleIsFetching,
 })(UsersContainer);

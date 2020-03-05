@@ -5,3 +5,7 @@
 .description {
   margin-left: 10px;
 }
+
+.description img {
+  width: 200px;
+}
