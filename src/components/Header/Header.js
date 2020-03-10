@@ -11,7 +11,13 @@ const Header = () => {
         <img alt="menu_icon" src={menu_icon} />
       </div>
 
-      <div className={s.search}>SEARCH</div>
+      <div>
+        <input
+          placeholder={'Search here people or page...'}
+          className={s.search}
+          background-image={menu_icon}
+        />
+      </div>
 
       <div className={s.login}>
         <NavLink to="/login">

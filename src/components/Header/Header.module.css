@@ -1,9 +1,9 @@
 .header {
   grid-area: h;
-  background-color: #494c62;
+  background-color: #3f4257;
   display: grid;
   grid-template-columns: 90px 1fr 90px;
-  position: relative;
+  /* position: relative; */
 }
 
 .logo {
@@ -17,6 +17,21 @@
 }
 
 .search {
+  background-color: #494c62;
+  width: 50%;
+  height: 100%;
+  font-size: 17px;
+  padding-left: 10px;
+  border: 0px solid;
+  color: #8b90ae;
+  background-image: url('./../../assets/images/search.png');
+  background-repeat: no-repeat;
+  background-position: 95%;
+  background-size: 25px;
+}
+
+.search::placeholder {
+  color: #8b90ae;
 }
 
 .login {
