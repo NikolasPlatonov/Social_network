@@ -4,7 +4,7 @@ import login_icon from './../../assets/images/icon_on_off.png';
 import menu_icon from './../../assets/images/icon_sandvich.png';
 import { NavLink } from 'react-router-dom';
 
-const Header = () => {
+const Header = props => {
   return (
     <header className={s.header}>
       <div className={s.logo}>
@@ -20,9 +20,13 @@ const Header = () => {
       </div>
 
       <div className={s.login}>
-        <NavLink to="/login">
-          <img alt="on/off_icon" src={login_icon} />
-        </NavLink>
+        {props.isAuth ? (
+          props.login
+        ) : (
+          <NavLink to="/login">
+            <img alt="on/off_icon" src={login_icon} />
+          </NavLink>
+        )}
       </div>
     </header>
   );
