@@ -6,36 +6,65 @@ import SitebarContainer from '../Sitebar/SitebarContainer';
 const Navbar = () => {
   return (
     <nav className={s.nav}>
-      <div className={s.item}>
-        <NavLink to="/profile" activeClassName={s.active}>
-          Profile
-        </NavLink>
+      <div className={s.nav_item}>
+        <div className={s.nav_item_name}>
+          <div className={s.item}>
+            <NavLink to="/profile" activeClassName={s.active}>
+              Profile
+            </NavLink>
+          </div>
+        </div>
       </div>
-      <div className={`${s.item} ${s.active}`}>
-        <NavLink to="/dialogs" activeClassName={s.active}>
-          Messages
-        </NavLink>
+
+      <div className={s.nav_item}>
+        <div className={s.nav_item_name}>
+          <div className={`${s.item} ${s.active}`}>
+            <NavLink to="/dialogs" activeClassName={s.active}>
+              Messages
+            </NavLink>
+          </div>
+        </div>
       </div>
-      <div className={s.item}>
-        <NavLink to="/news" activeClassName={s.active}>
-          News
-        </NavLink>
+
+      <div className={s.nav_item}>
+        <div className={s.nav_item_name}>
+          <div className={s.item}>
+            <NavLink to="/news" activeClassName={s.active}>
+              News
+            </NavLink>
+          </div>
+        </div>
       </div>
-      <div className={s.item}>
-        <NavLink to="/music" activeClassName={s.active}>
-          Music
-        </NavLink>
+
+      <div className={s.nav_item}>
+        <div className={s.nav_item_name}>
+          <div className={s.item}>
+            <NavLink to="/music" activeClassName={s.active}>
+              Music
+            </NavLink>
+          </div>
+        </div>
       </div>
-      <div className={s.item}>
-        <NavLink to="/users" activeClassName={s.active}>
-          Users
-        </NavLink>
+
+      <div className={s.nav_item}>
+        <div className={s.nav_item_name}>
+          <div className={s.item}>
+            <NavLink to="/users" activeClassName={s.active}>
+              Users
+            </NavLink>
+          </div>
+        </div>
       </div>
-      <div className={s.item}>
-        <div className={s.item_set}>
-          <NavLink to="/settings" activeClassName={s.active}>
-            Settings
-          </NavLink>
+
+      <div className={s.nav_item}>
+        <div className={s.nav_item_name}>
+          <div className={s.item}>
+            <div className={s.item_set}>
+              <NavLink to="/settings" activeClassName={s.active}>
+                Settings
+              </NavLink>
+            </div>
+          </div>
         </div>
       </div>
 

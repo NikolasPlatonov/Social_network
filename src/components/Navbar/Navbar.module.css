@@ -1,17 +1,29 @@
 .nav {
   grid-area: n;
-  background-color: goldenrod;
-  padding: 20px;
+  background-color: white;
+}
+
+.nav_item {
+  height: 90px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: '. a .';
+}
+
+.nav_item_name {
+  grid-area: a;
+  align-self: center;
+  justify-self: center;
 }
 
 /* because "a" it's tag <a></a> for link */
 .item a {
-  color: white;
+  color: #9a9fbf;
   text-decoration: none;
 }
 
 .item a.active {
-  color: red;
+  color: #ff5e3a;
 }
 
 .item_set {

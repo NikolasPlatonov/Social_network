@@ -1,8 +1,30 @@
 .header {
   grid-area: h;
-  background-color: aquamarine;
+  background-color: #494c62;
+  display: grid;
+  grid-template-columns: 90px 1fr 90px;
+  position: relative;
 }
 
-.header img {
+.logo {
+  background-color: #ff5e3a;
+  text-align: center;
+  padding-top: 25px;
+}
+
+.logo img {
+  width: 40px;
+}
+
+.search {
+}
+
+.login {
+  background-color: #ff5e3a;
+  text-align: center;
+  padding-top: 25px;
+}
+
+.login img {
   width: 40px;
 }

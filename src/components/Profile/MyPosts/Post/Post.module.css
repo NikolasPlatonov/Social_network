@@ -7,11 +7,13 @@
 .info {
   border: 1px #ccc solid;
   padding: 10px;
+  flex: 1;
 }
 
 .message {
   border: 1px #ccc solid;
   padding: 10px;
+  flex: 8;
 }
 
 .info img {

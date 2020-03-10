@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './ProfileInfo.module.css';
 import Preloader from '../../../common/preloader/Preloader';
+// import profile_background from './../../../assets/images/profile_background.jpg';
 
 const ProfileInfo = props => {
   if (!props.profile) {
@@ -9,12 +10,9 @@ const ProfileInfo = props => {
 
   return (
     <div className={s.content}>
-      <div>
-        <img
-          alt="big_logo"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH5y3Hh2zYe-5EsxLq0yGIL9UCH5Wfhrz4tLtNgqctoD9veaoZXw&s"
-        />
-      </div>
+      {/* <div>
+        <img alt="big_logo" src={profile_background} />
+      </div> */}
       <div className={s.description}>
         <img alt="ava" src={props.profile.photos.large} />
         <div>{props.profile.abouteMe}</div>
