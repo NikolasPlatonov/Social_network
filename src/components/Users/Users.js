@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 import * as axios from 'axios';
 
 let Users = props => {
+  console.log('props', props);
   let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
 
   let pages = [];
