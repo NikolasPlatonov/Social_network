@@ -2,6 +2,7 @@ import React from 'react';
 import s from './Header.module.css';
 import login_icon from './../../assets/images/icon_on_off.png';
 import menu_icon from './../../assets/images/icon_sandvich.png';
+import close_icon from './../../assets/images/icon_close.png';
 import { NavLink } from 'react-router-dom';
 
 const Header = props => {
@@ -21,7 +22,7 @@ const Header = props => {
 
       <div className={s.login}>
         {props.isAuth ? (
-          props.login
+          <img alt="close_icon" src={close_icon} />
         ) : (
           <NavLink to="/login">
             <img alt="on/off_icon" src={login_icon} />
