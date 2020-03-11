@@ -1,7 +1,6 @@
 import React from 'react';
 import s from './ProfileInfo.module.css';
 import Preloader from '../../../common/preloader/Preloader';
-// import profile_background from './../../../assets/images/profile_background.jpg';
 
 const ProfileInfo = props => {
   if (!props.profile) {
@@ -10,15 +9,18 @@ const ProfileInfo = props => {
 
   return (
     <div className={s.content}>
-      {/* <div>
-        <img alt="big_logo" src={profile_background} />
-      </div> */}
-      <div className={s.description}>
-        <img alt="ava" src={props.profile.photos.large} />
-        <div>{props.profile.abouteMe}</div>
-        <div> {props.profile.fullName}</div>
-        <div>{props.profile.lookingForAJob}</div>
-        <div>{props.profile.lookingForAJobDescription}</div>
+      <div className={s.propfile_info}>
+        <div className={s.description}>
+          <img alt="ava" src={props.profile.photos.large} />
+          <div className={s.description_info}>
+            <div className={s.name_text}> {props.profile.fullName}</div>
+            <div className={s.jobdes_text}>
+              {props.profile.lookingForAJobDescription}
+            </div>
+            <div className={s.about_text}>{props.profile.abouteMe}</div>
+            <div className={s.job_text}>{props.profile.lookingForAJob}</div>
+          </div>
+        </div>
       </div>
     </div>
   );
