@@ -2,7 +2,7 @@ import React from 'react';
 import s from './Users.module.css';
 import userPhoto from './../../assets/images/photo_user.png';
 import { NavLink } from 'react-router-dom';
-import { unFollowUser, followUser } from '../../api/api';
+import { usersAPI } from '../../api/api';
 
 let Users = props => {
   console.log('props', props);
@@ -54,7 +54,7 @@ let Users = props => {
               {u.followed ? (
                 <button
                   onClick={() => {
-                    unFollowUser(u.id).then(responce => {
+                    usersAPI.unFollowUser(u.id).then(responce => {
                       if (responce.resultCode === 0) {
                         props.unfollow(u.id);
                       }
@@ -66,7 +66,7 @@ let Users = props => {
               ) : (
                 <button
                   onClick={() => {
-                    followUser(u.id).then(responce => {
+                    usersAPI.followUser(u.id).then(responce => {
                       if (responce.resultCode === 0) {
                         props.follow(u.id);
                       }

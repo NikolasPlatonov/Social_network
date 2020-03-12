@@ -10,24 +10,26 @@ import {
   toogleIsFetching,
 } from '../../redux/users-reducer';
 import Preloader from '../../common/preloader/Preloader';
-import { getUsers } from '../../api/api';
+import { usersAPI } from '../../api/api';
 
 class UsersContainer extends React.Component {
   componentDidMount() {
     this.props.toogleIsFetching(true);
 
-    getUsers(this.props.currentPage, this.props.pageSize).then(responce => {
-      this.props.toogleIsFetching(false);
-      this.props.setUsers(responce.items);
-      this.props.setTotalUsersCount(responce.totalCount);
-    });
+    usersAPI
+      .getUsers(this.props.currentPage, this.props.pageSize)
+      .then(responce => {
+        this.props.toogleIsFetching(false);
+        this.props.setUsers(responce.items);
+        this.props.setTotalUsersCount(responce.totalCount);
+      });
   }
 
   onPageChanged = pageNumber => {
     this.props.setCurrentPage(pageNumber);
     this.props.toogleIsFetching(true);
 
-    getUsers(pageNumber, this.props.pageSize).then(responce => {
+    usersAPI.getUsers(pageNumber, this.props.pageSize).then(responce => {
       this.props.toogleIsFetching(false);
 
       this.props.setUsers(responce.items);
