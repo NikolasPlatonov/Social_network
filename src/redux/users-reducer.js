@@ -1,3 +1,5 @@
+import { act } from 'react-dom/test-utils';
+
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET-USERS';
@@ -12,7 +14,7 @@ let initialState = {
   totalUsersCount: 0,
   currentPage: 1,
   isFetching: true,
-  followingInProgress: false,
+  followingInProgress: [],
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -52,7 +54,12 @@ const usersReducer = (state = initialState, action) => {
       return { ...state, isFetching: action.isFetching };
 
     case TOOGLE_IS_FOLLOWING_PROGRESS:
-      return { ...state, followingInProgress: action.isFetching };
+      return {
+        ...state,
+        followingInProgress: action.isFetching
+          ? [...state.followingInProgress, action.userId]
+          : state.followingInProgress.filter(id => id !== action.userId),
+      };
 
     default:
       return state;
@@ -74,9 +81,10 @@ export const toogleIsFetching = isFetching => ({
   type: TOOGLE_IS_FETCHING,
   isFetching,
 });
-export const toogleFollowingProgress = isFetching => ({
+export const toogleFollowingProgress = (isFetching, userId) => ({
   type: TOOGLE_IS_FOLLOWING_PROGRESS,
   isFetching,
+  userId,
 });
 
 export default usersReducer;

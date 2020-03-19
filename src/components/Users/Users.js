@@ -53,14 +53,14 @@ let Users = props => {
             <div>
               {u.followed ? (
                 <button
-                  disabled={props.followingInProgress}
+                  disabled={props.followingInProgress.some(id => id === u.id)}
                   onClick={() => {
-                    props.toogleFollowingProgress(true);
+                    props.toogleFollowingProgress(true, u.id);
                     usersAPI.unFollowUser(u.id).then(responce => {
                       if (responce.resultCode === 0) {
                         props.unfollow(u.id);
                       }
-                      props.toogleFollowingProgress(false);
+                      props.toogleFollowingProgress(false, u.id);
                     });
                   }}
                 >
@@ -68,14 +68,14 @@ let Users = props => {
                 </button>
               ) : (
                 <button
-                  disabled={props.followingInProgress}
+                  disabled={props.followingInProgress.some(id => id === u.id)}
                   onClick={() => {
-                    props.toogleFollowingProgress(true);
+                    props.toogleFollowingProgress(true, u.id);
                     usersAPI.followUser(u.id).then(responce => {
                       if (responce.resultCode === 0) {
                         props.follow(u.id);
                       }
-                      props.toogleFollowingProgress(false);
+                      props.toogleFollowingProgress(false, u.id);
                     });
                   }}
                 >
